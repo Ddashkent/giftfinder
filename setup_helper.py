@@ -13,7 +13,7 @@ gunicorn==21.2.0
 requests==2.31.0
 beautifulsoup4==4.12.2
 lxml==4.9.3
-Pillow
+Pillow>=11.0.0
 fake-useragent==1.4.0
 PyPDF2==3.0.1
 openpyxl==3.1.2
