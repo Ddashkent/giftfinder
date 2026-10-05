@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Поиск новогодних подарков и каталогов</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"><i class="fas fa-gift"></i> <span>GiftFinder</span></div>
+            <p class="subtitle">Сервис поиска новогодних подарков, каталогов и прайсов поставщиков</p>
+        </div>
+    </header>
+
+    <main class="container main">
+        <div class="card search-card">
+            <h2><i class="fas fa-search"></i> Поиск поставщика</h2>
+            <p class="hint">Введите бренд, фабрику или название компании (например: <b>Конфаэль</b>, <b>Амадей</b>, <b>Красный Октябрь</b>):</p>
+            <div class="search-box">
+                <input type="text" id="companyInput" placeholder="Название компании..." autocomplete="off">
+                <button id="searchBtn" onclick="startSearch()"><i class="fas fa-search"></i> Найти подарки</button>
+            </div>
+        </div>
+
+        <div id="progressBlock" class="card progress-card" style="display: none;">
+            <h3 id="progressTitle"><i class="fas fa-spinner fa-spin"></i> Обработка...</h3>
+            <div class="bar-wrap"><div id="progressBar" class="bar"></div></div>
+            <p id="progressMsg">Ищем сайт...</p>
+        </div>
+
+        <div id="resultsBlock" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <div><b id="countCats">0</b><span>Каталогов</span></div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-images"></i>
+                    <div><b id="countImgs">0</b><span>Фотографий</span></div>
+                </div>
+                <div class="stat-card action">
+                    <button class="btn-zip" onclick="downloadZip()"><i class="fas fa-download"></i> Скачать всё (ZIP)</button>
+                </div>
+            </div>
+
+            <div class="card section-block">
+                <h3><i class="fas fa-file-pdf"></i> Найденные каталоги и прайсы</h3>
+                <div id="catalogsList" class="cats-list"></div>
+            </div>
+
+            <div class="card section-block">
+                <h3><i class="fas fa-boxes-stacked"></i> Фотографии подарков и наборов</h3>
+                <div id="imagesList" class="imgs-grid"></div>
+            </div>
+        </div>
+    </main>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
